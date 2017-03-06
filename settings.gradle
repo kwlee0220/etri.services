@@ -1,0 +1,6 @@
+rootProject.name = 'etri.services'
+
+['utils','event','planet'].each {
+	include ":$it"
+	project(":$it").projectDir = file("../$it")
+}

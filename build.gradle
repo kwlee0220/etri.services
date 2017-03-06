@@ -1,0 +1,49 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'etri'
+version = '1.0'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+[compileJava,compileTestJava]*.options*.encoding = 'UTF-8'
+
+repositories {
+	mavenCentral()
+	maven {
+		name = 'dist'
+		url = "file:${distRepositoryDir}"
+	}
+}
+
+dependencies {
+	compile project(':utils')
+	compile project(':event')
+	compile project(':planet')
+}
+
+task sourceJar(type: Jar) {
+	classifier 'sources'
+	from sourceSets.main.allSource
+}
+
+task javadocJar(type: Jar) {
+	classifier 'javadoc'
+	from javadoc.destinationDir
+}
+
+artifacts {
+	archives sourceJar
+	archives javadocJar
+}
+
+apply plugin: 'eclipse'
+eclipse {
+	classpath {
+		file {
+			withXml {
+				def node = it.asNode()
+				node.appendNode('classpathentry', [kind: 'output', path: 'classes'])
+			}
+		}
+	}
+}
