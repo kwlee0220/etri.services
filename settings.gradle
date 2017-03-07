@@ -1,6 +1,6 @@
 rootProject.name = 'etri.services'
 
-['utils','event','planet'].each {
+['utils','event', 'async','planet', 'camus.model'].each {
 	include ":$it"
 	project(":$it").projectDir = file("../$it")
 }

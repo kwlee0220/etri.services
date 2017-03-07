@@ -17,8 +17,10 @@ repositories {
 
 dependencies {
 	compile project(':utils')
-	compile project(':event')
+	compile project(":event")
+	compile project(':async')
 	compile project(':planet')
+	compile project(':camus.model')
 }
 
 task sourceJar(type: Jar) {
