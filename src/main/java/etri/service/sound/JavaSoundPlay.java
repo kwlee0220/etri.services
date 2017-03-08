@@ -16,7 +16,7 @@ import camus.service.sound.PcmPlayerException;
 import camus.service.sound.VolumeControl;
 
 import async.OperationSchedulerProvider;
-import async.support.ThreadedAsyncOperation2;
+import async.support.ThreadedAsyncOperation;
 import utils.io.SoundPlay;
 
 
@@ -24,7 +24,7 @@ import utils.io.SoundPlay;
  * 
  * @author Kang-Woo Lee (ETRI)
  */
-public class JavaSoundPlay extends ThreadedAsyncOperation2<Void>
+public class JavaSoundPlay extends ThreadedAsyncOperation<Void>
 						implements PauseControl, MuteControl, VolumeControl, MediaPlayTimeControl {
 	private final SoundPlay m_play;
 	
