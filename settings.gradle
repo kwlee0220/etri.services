@@ -2,7 +2,7 @@ rootProject.name = 'etri.services'
 
 ['utils','event', 'async','planet'].each {
 	include ":$it"
-	project(":$it").projectDir = file("../../github/$it")
+	project(":$it").projectDir = file("../../common/$it")
 }
 ['camus.model'].each {
 	include ":$it"
