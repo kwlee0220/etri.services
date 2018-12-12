@@ -9,10 +9,6 @@ sourceCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
 	mavenCentral()
-	maven {
-		name = 'dist'
-		url = "file:${distRepositoryDir}"
-	}
 }
 
 dependencies {
