@@ -3,6 +3,8 @@ package etri.service.image;
 import java.awt.image.BufferedImage;
 import java.util.concurrent.locks.ReentrantLock;
 
+import javax.annotation.concurrent.GuardedBy;
+
 import camus.service.PowerControlException;
 import camus.service.geo.Rectangle;
 import camus.service.geo.Size2d;
@@ -10,7 +12,6 @@ import camus.service.image.BeamProjector;
 import camus.service.image.Color;
 import camus.service.vision.Image;
 
-import net.jcip.annotations.GuardedBy;
 import utils.Initializable;
 
 
